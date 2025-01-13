@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "shopping",
+    "name": "Shoppy",
     "slug": "shopping",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/start.png",
-    "scheme": "myapp",
+    "icon": "./assets/images/icon.jpeg",
+    "scheme": "shoppy",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -13,27 +13,41 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/icon.jpeg",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.frankie8642.shopping"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon.jpeg"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
+          "image": "./assets/images/icon.jpeg",
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-sqlite",
+        {
+          "enableFTS": true
+        }
       ]
     ],
+    "extra": {
+      "eas": {
+        "projectId": "d8551e19-6991-4368-864b-1d5b24544a0b"
+      },
+      "router": {
+        "origin": false
+      }
+    },
     "experiments": {
       "typedRoutes": true
     }

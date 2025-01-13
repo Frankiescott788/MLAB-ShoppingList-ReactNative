@@ -5,6 +5,8 @@ import { useFonts } from "expo-font";  // Import the hook
 import "@/global.css";
 import store from "@/store/store";
 import { Text } from "react-native";
+import Database from "@/db/db";
+import Loading from "@/components/loading";
 
 // Import custom fonts (adjust paths as necessary)
 const customFonts = {
@@ -15,8 +17,10 @@ export default function RootLayout(): ReactElement {
   // Load custom fonts using useFonts hook
   const [fontsLoaded] = useFonts(customFonts);
 
+  Database();
+
   if (!fontsLoaded) {
-    return <Text>Loading...</Text> // Or you can show a loading screen while fonts are loading
+    return <Loading /> 
   }
 
   return (
